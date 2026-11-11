@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fafaf9;
   --foreground: #171717;
 }
 
@@ -12,15 +12,69 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-blob {
+  background: radial-gradient(
+      ellipse 60% 50% at 50% 50%,
+      rgba(129, 140, 248, 0.9) 0%,
+      rgba(129, 140, 248, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 35% 60%,
+      rgba(236, 72, 153, 0.55) 0%,
+      rgba(236, 72, 153, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 65% 40%,
+      rgba(56, 189, 248, 0.8) 0%,
+      rgba(56, 189, 248, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 45% 40% at 50% 30%,
+      rgba(167, 139, 250, 0.7) 0%,
+      rgba(167, 139, 250, 0) 70%
+    );
+  filter: blur(40px);
+}
+
+.gradient-blob-soft {
+  background: radial-gradient(
+      ellipse 60% 50% at 50% 50%,
+      rgba(129, 140, 248, 0.5) 0%,
+      rgba(129, 140, 248, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 35% 60%,
+      rgba(236, 72, 153, 0.35) 0%,
+      rgba(236, 72, 153, 0) 70%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 65% 40%,
+      rgba(56, 189, 248, 0.45) 0%,
+      rgba(56, 189, 248, 0) 70%
+    );
+  filter: blur(30px);
+}
+
+.card-purple {
+  background: linear-gradient(135deg, #ede9fe 0%, #e9d5ff 50%, #f5d0fe 100%);
+}
+
+.card-mint {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #d1fae5 100%);
+}
+
+.card-dark {
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
 }
